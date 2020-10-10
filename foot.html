@@ -6,7 +6,6 @@
     window.config = {
         avatar: 'https://pic.cnblogs.com/face/1378655/20201008090330.png',
         github: 'Andy-AO',
-        gallery: '1796566'
     }
 </script>
 <!-- 下方内容请勿擅自修改，除非知道明确含义，如进行完善和扩展，请fork源码(https://github.com/MakerGYT/cnblogs-theme-next)后提交pull request;-->
@@ -35,7 +34,6 @@
         author: footerOverTestArray[footerOverTestArray.length - 1],
         avatar: $('.author_avatar').attr('src'),
         github: blogSlug,
-        gallery: null
     }, config);
 
     var linkObject = document.createElement("link");
@@ -156,15 +154,6 @@
         $('.site-title').text(config.siteTitle)
         $('.menu-item-home a:first').attr('href', '/' + blogSlug)
         $('.menu-item-archives a:first').attr('href', '/' + blogSlug + '/p')
-        if (config.gallery) {
-            $('.menu-item-gallery a:first').attr('href', '/' + blogSlug + '/gallery/' + config.gallery + '.html')
-            $('.menu-item-gallery').css('display', 'block')
-
-            if (/gallery/.test(url)) {
-                $('.menu-item-home').removeClass('menu-item-active')
-                $('.menu-item-gallery').addClass('menu-item-active')
-            }
-        }
 
         if (/(\/p)$/.test(url)) {
             $('.menu-item-home').removeClass('menu-item-active')
